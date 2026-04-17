@@ -1,10 +1,10 @@
 from google import genai
 from dotenv import load_dotenv
-import os, io
-from gtts import gTTS 
+import os ,io
+from gtts import gTTS
 
 
-from PIL import Image
+
 
 
 #loading the environment variable 
@@ -31,6 +31,8 @@ def note_generator(images):
 
     return response.text 
 
+
+
 def audio_transcription(text):
     speech = gTTS(text,lang='bn',slow=False)
     audio_buffer = io.BytesIO()
@@ -48,6 +50,4 @@ def quiz_generator(image,difficulty):
         contents=[image,prompt]
     )
 
-    return response.text
-
-
+    return response.text 
